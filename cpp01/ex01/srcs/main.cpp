@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 14:55:54 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/08 15:59:59 by avillar          ###   ########.fr       */
+/*   Created: 2022/11/08 14:55:28 by avillar           #+#    #+#             */
+/*   Updated: 2022/11/08 16:08:11 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
+#include "../includes/Zombie.hpp"
 
-# include <iostream>
-
-class Zombie
+int	main(int argc, char **argv)
 {
-private:
-	std::string	name;
+	int	i;
+	Zombie	*zHorde;
 
-public:
-	Zombie();
-	~Zombie();
-
-	void		setName(std::string name);
-	std::string	getName(void);
-	void		announce(void);
-};
-
-
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
-
-
-#endif
+	if (argc < 2 || argc > 3)
+	{
+		std::cout << "Enter the number of Zombie you want, and the name" << std::endl;
+		return (1);
+	}
+	i = std::atoi(argv[1]);
+	zHorde = zombieHorde(i, argv[2]);
+	for (int j = 0; j < i; j++)
+	{
+		zHorde[j].announce();
+	}
+	delete[] zHorde;
+	return (0);
+}

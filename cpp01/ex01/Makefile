@@ -6,16 +6,15 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2022/11/08 15:34:20 by avillar          ###   ########.fr        #
+#    Updated: 2022/11/08 16:06:08 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = BraiiiiiiiinnnnzzzZ
+NAME = zombieHorde
 
 SRCS =	srcs/main.cpp			\
 		srcs/Zombie.cpp			\
-		srcs/newZombie.cpp		\
-		srcs/randomChump.cpp	\
+		srcs/zombieHorde.cpp	\
 
 OBJS = $(SRCS:.cpp=.o)
 
