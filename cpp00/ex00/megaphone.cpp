@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:46:45 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/14 13:11:44 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/14 15:55:55 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,9 @@ int	main(int argc, char **argv)
 	}
 	for (int i = 1; argv[i]; i++)
 	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			if ((char)(argv[i][j]) >= 97 && (char)(argv[i][j]) <= 122)
-				std::cout << (char)((argv[i][j]) - 32);
-			else if ((argv[i][j]))
-				std::cout << (char)(argv[i][j]);
-		}
+		std::string str = argv[i];
+		for (int j = 0; str[j]; j++)
+			std::cout << (char)toupper(str[j]);
 	}
 	std::cout << std::endl;
 	return (0);
