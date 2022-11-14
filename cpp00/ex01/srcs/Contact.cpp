@@ -6,11 +6,20 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:45:57 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/07 14:13:43 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:04:03 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Contact.hpp"
+
+
+Contact::Contact()
+{
+}
+
+Contact::~Contact()
+{
+}
 
 /*
 

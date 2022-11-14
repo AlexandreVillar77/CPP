@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:28:50 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/08 14:19:20 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:03:45 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ private:
 	std::string dark;
 
 public:
+	Contact();
+	~Contact();
+
 	void	setIndex(int i);
 	void	setFirstName(std::string first);
 	void	setLastName(std::string first);
