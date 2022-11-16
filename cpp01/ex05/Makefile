@@ -6,16 +6,14 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2022/11/16 10:22:43 by avillar          ###   ########.fr        #
+#    Updated: 2022/11/16 10:23:21 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = BraiiiiiiiinnnnzzzZ
+NAME = harl
 
 SRCS =	srcs/main.cpp			\
-		srcs/Zombie.cpp			\
-		srcs/newZombie.cpp		\
-		srcs/randomChump.cpp	\
+		srcs/Harl.cpp			\
 
 OBJS = $(SRCS:.cpp=.o)
 

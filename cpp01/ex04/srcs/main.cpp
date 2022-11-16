@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:20:59 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/14 15:42:57 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/14 16:01:38 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	replace(std::string &str, char *to_rep, char *rep_by)
 
 void	copy_file(std::ifstream &infile, std::ofstream &outfile, char *to_rep, char *rep_by)
 {
-	std::string test;
+	std::string str;
 
-	std::getline(infile, test, '\0');
-	replace(test, to_rep, rep_by);
-	outfile.write(test.c_str(), test.length());
+	std::getline(infile, str, '\0');
+	replace(str, to_rep, rep_by);
+	outfile.write(str.c_str(), str.length());
 }
 
 int	main(int argc, char **argv)
