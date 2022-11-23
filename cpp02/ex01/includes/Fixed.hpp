@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:15:06 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/21 10:38:34 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:07:02 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define __FIXED_HPP__
 
 # include <iostream>
+# include <cmath>
+# include <fstream>
 
 class Fixed
 {
@@ -22,7 +24,9 @@ private:
 	static const int _width = 8;
 
 public:
-	Fixed(/* args */);
+	Fixed();
+	Fixed(const float num);
+	Fixed(const int num);
 	~Fixed();
 
 	// recopy constructor
@@ -34,7 +38,10 @@ public:
 	//functiun
 	int		getRawBits( void ) const ;
 	void	setRawBits(int const raw);
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 };
 
+std::ostream	&operator<<(std::ostream& os, const Fixed &item);
 
 #endif
