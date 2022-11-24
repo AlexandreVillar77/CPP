@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 10:14:59 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/23 15:27:43 by avillar          ###   ########.fr       */
+/*   Updated: 2022/11/24 13:07:41 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ std::ostream&	operator<<(std::ostream& os, const Fixed &item)
 
 Fixed&	Fixed::operator++()
 {
-	_rawBits = ++_rawBits;
+	_rawBits = _rawBits + 1;
 	return (*this);
 }
 
@@ -149,7 +149,7 @@ Fixed	Fixed::operator++(int)
 
 Fixed&	Fixed::operator--()
 {
-	_rawBits = --_rawBits;
+	_rawBits = _rawBits - 1;
 	return (*this);
 }
 
