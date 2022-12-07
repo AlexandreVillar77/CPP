@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:21:21 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/06 15:40:41 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:14:19 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,23 @@ FragTrap::~FragTrap()
 {
 	std::cout << this->getType() << " Destrucor called." << std::endl;
 }
+
+//operator overload
+
+void	FragTrap::operator=(const FragTrap&og)
+{
+	this->setName(og.getName());
+	this->setAttackDmg(og.getAttackDmg());
+	this->setEnergy(og.getEnergy());
+	this->setHp(og.getHp());
+	this->setType(og.getType());
+}
+
+FragTrap::FragTrap(const FragTrap &og)
+{
+	operator=(og);
+}
+
 
 void	FragTrap::highFivesGuys(void)
 {

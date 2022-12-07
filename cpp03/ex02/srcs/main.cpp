@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:33:44 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/06 15:39:27 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:15:13 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,14 @@ int	main()
     std::cout << std::endl;*/
 
 	FragTrap a;
+	std::cout << std::endl;
 	FragTrap b("Beta");
 
+	std::cout << std::endl;
 	b.attack(a.getName());
+	std::cout << std::endl;
 	b.highFivesGuys();
+	std::cout << std::endl;
 
 	return (0);
 }

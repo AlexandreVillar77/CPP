@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:43:42 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/24 14:42:02 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:09:09 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,22 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destrucor called." << std::endl;
+}
+
+//operator overload
+
+void	ScavTrap::operator=(const ScavTrap&og)
+{
+	this->setName(og.getName());
+	this->setAttackDmg(og.getAttackDmg());
+	this->setEnergy(og.getEnergy());
+	this->setHp(og.getHp());
+	this->setType(og.getType());
+}
+
+ScavTrap::ScavTrap(const ScavTrap &og)
+{
+	operator=(og);
 }
 
 void	ScavTrap::guardGate()

@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:34:39 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/24 13:41:19 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 08:58:06 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,27 @@ ClapTrap::~ClapTrap()
 	std::cout << "Destructor called" << std::endl;
 }
 
+//operator overload
+
+void	ClapTrap::operator=(const ClapTrap &og)
+{
+	this->_name = og.getName();
+	this->_attackDmg = og.getAttackDmg();
+	this->_energyPts = og.getEnergy();
+	this->_hitPts = og.getHp();
+}
+
+//Copy Constructor
+/*
+* call operator=() or just this->_rawBits = og._rawBits;
+*/
+
+
+ClapTrap::ClapTrap(const ClapTrap &og)
+{
+	operator=(og);
+}
+
 void	ClapTrap::setHp(int amount)
 {
 	_hitPts = amount;
@@ -38,7 +59,7 @@ int		ClapTrap::getHp( void ) const
 	return (_hitPts);
 }
 
-std::string	ClapTrap::getName( void )
+std::string	ClapTrap::getName( void ) const
 {
 	return (_name);
 }
@@ -53,7 +74,7 @@ void			ClapTrap::setEnergy(unsigned int amount)
 	_energyPts = amount;
 }
 
-unsigned int	ClapTrap::getEnergy( void )
+unsigned int	ClapTrap::getEnergy( void ) const
 {
 	return (_energyPts);
 }

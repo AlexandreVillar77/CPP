@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:33:58 by avillar           #+#    #+#             */
-/*   Updated: 2022/11/24 13:32:59 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 08:56:49 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,18 @@ public:
 	ClapTrap(std::string name);
 	~ClapTrap();
 
+	// recopy constructor
+	ClapTrap(const ClapTrap &og);
+
+	//operator overload *
+	void	operator=(const ClapTrap &og);
+
 	void			setHp(int amount);
 	int				getHp( void ) const;
 	unsigned int	getAttackDmg( void ) const;
-	std::string		getName( void );
+	std::string		getName( void ) const;
 	void			setEnergy(unsigned int amount);
-	unsigned int	getEnergy( void );
+	unsigned int	getEnergy( void ) const;
 
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);

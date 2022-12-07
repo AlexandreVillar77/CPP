@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 12:34:39 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/06 15:41:20 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:13:06 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap() : _name("Default") , _hitPts(10) , _energyPts(10) , _attack
 }
 
 
-ClapTrap::ClapTrap(std::string name) : _name(name) , _hitPts(10) , _energyPts(10) , _attackDmg(0)
+ClapTrap::ClapTrap(std::string name) : _name(name) , _hitPts(10) , _energyPts(10) , _attackDmg(0) , _type("ClapTrap")
 {
 	std::cout << "ClapTrap " << name << " has been created." << std::endl;
 }
@@ -26,6 +26,22 @@ ClapTrap::ClapTrap(std::string name) : _name(name) , _hitPts(10) , _energyPts(10
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap Destructor called" << std::endl;
+}
+
+//operator overload
+
+void	ClapTrap::operator=(const ClapTrap &og)
+{
+	this->_name = og.getName();
+	this->_attackDmg = og.getAttackDmg();
+	this->_energyPts = og.getEnergy();
+	this->_hitPts = og.getHp();
+	this->_type = og.getType();
+}
+
+ClapTrap::ClapTrap(const ClapTrap &og)
+{
+	operator=(og);
 }
 
 void	ClapTrap::setHp(int amount)
@@ -48,7 +64,7 @@ int		ClapTrap::getHp( void ) const
 	return (_hitPts);
 }
 
-std::string	ClapTrap::getName( void )
+std::string	ClapTrap::getName( void ) const
 {
 	return (this->_name);
 }
@@ -63,7 +79,7 @@ void			ClapTrap::setEnergy(unsigned int amount)
 	_energyPts = amount;
 }
 
-unsigned int	ClapTrap::getEnergy( void )
+unsigned int	ClapTrap::getEnergy( void ) const
 {
 	return (_energyPts);
 }
@@ -73,7 +89,7 @@ void	ClapTrap::setType(std::string type)
 	_type = type;
 }
 
-std::string ClapTrap::getType( void )
+std::string ClapTrap::getType( void ) const
 {
 	return (_type);
 }

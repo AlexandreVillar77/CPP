@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:21:08 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/06 15:35:47 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:11:21 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ public:
 	FragTrap(/* args */);
 	FragTrap(std::string name);
 	~FragTrap();
+
+	// recopy constructor
+	FragTrap(const FragTrap &og);
+
+	//operator overload *
+	void	operator=(const FragTrap &og);
 
 	void highFivesGuys(void);
 };

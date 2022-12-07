@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:43:06 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/06 15:23:46 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/07 09:09:23 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ public:
 	ScavTrap(/* args */);
 	ScavTrap(std::string name);
 	~ScavTrap();
+
+	// recopy constructor
+	ScavTrap(const ScavTrap &og);
+
+	//operator overload *
+	void	operator=(const ScavTrap &og);
 
 	void	guardGate();
 };
