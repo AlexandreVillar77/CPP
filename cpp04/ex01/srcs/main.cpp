@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:07:08 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 13:12:10 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/13 14:58:37 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,29 @@
 #include "../includes/Cat.hpp"
 #include "../includes/WrongAnimal.hpp"
 #include "../includes/WrongCat.hpp"
+#include "../includes/Brain.hpp"
 
 int	main()
 {
-	/*const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;*/
+	const Animal** animals = new const Animal*[10];
 
-	const WrongAnimal* ani = new WrongAnimal();
-	const WrongAnimal* Wcat = new WrongCat();
-	const Animal* Tcat = new Cat();
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+	
+	//print ideas
+	std::cout << "Ideas of the first Dog:" << std::endl;
+	((Dog*)animals[0])->getBrain()->printIdeas();
 
-	std::cout << Wcat->getType() << " " << std::endl;
-	std::cout << Tcat->getType() << " " << std::endl;
-	Wcat->makeSound();
-	Tcat->makeSound();
-	ani->makeSound();
-	delete Wcat;
-	delete Tcat;
-	delete ani;
+	for (int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+	}
+	delete [] animals;
+	
 	return (0);
 }

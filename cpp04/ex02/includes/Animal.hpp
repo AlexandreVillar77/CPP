@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:45:35 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 14:06:14 by avillar          ###   ########.fr       */
+/*   Updated: 2022/12/13 15:02:07 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ public:
 	 * @return std::string 
 	 */
 
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 };
 
 #endif

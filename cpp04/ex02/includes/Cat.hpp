@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:47:47 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 14:07:43 by avillar          ###   ########.fr       */
+/*   Created: 2022/12/06 15:50:38 by avillar           #+#    #+#             */
+/*   Updated: 2022/12/13 14:56:10 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __CAT_HPP__
+# define __CAT_HPP__
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 private:
-	/* data */
-public:
-	Dog(/* args */);
-	Dog(Dog const & src);
+	Brain *_brain;
 
-	~Dog();
-	Dog&	operator=(Dog const & src);
+public:
+	Cat(/* args */);
+	Cat(Cat const & src);
+
+	~Cat();
+	Cat	&operator=(Cat const & src);
+
+	Brain	*getBrain() const;
+
 	void	makeSound() const;
 };
 

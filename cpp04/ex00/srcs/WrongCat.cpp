@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:48:44 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 14:08:55 by avillar          ###   ########.fr       */
+/*   Created: 2022/12/13 09:38:49 by avillar           #+#    #+#             */
+/*   Updated: 2022/12/13 14:09:42 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Dog.hpp"
+#include "../includes/WrongCat.hpp"
 
-Dog::Dog(/* args */)
+WrongCat::WrongCat(/* args */)
 {
-	this->setType("Dog");
-	std::cout << "Dog default constructor called." << std::endl;
+	this->setType("WrongCat");
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &og)
+WrongCat::WrongCat(const WrongCat &og)
 {
 	operator=(og);
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << "Dog default destructor called." << std::endl;
+	std::cout << "WrongCat defaul detructor called.";
 }
 
-Dog&	Dog::operator=(const Dog &og)
+WrongCat&	WrongCat::operator=(const WrongCat &og)
 {
 	this->setType(og.getType());
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "We can ear a dog barking." << std::endl;
+	std::cout << "some wrong cat noises." << std::endl;
 }

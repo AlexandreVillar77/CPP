@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:47:47 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 14:07:43 by avillar          ###   ########.fr       */
+/*   Created: 2022/12/13 09:25:34 by avillar           #+#    #+#             */
+/*   Updated: 2022/12/13 14:09:25 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __WRONGCAT_HPP__
+# define __WRONGCAT_HPP__
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 private:
 	/* data */
 public:
-	Dog(/* args */);
-	Dog(Dog const & src);
+	WrongCat(/* args */);
+	WrongCat(const WrongCat &og);
 
-	~Dog();
-	Dog&	operator=(Dog const & src);
+	WrongCat&	operator=(const WrongCat &og);
 	void	makeSound() const;
+	~WrongCat();
 };
+
 
 #endif

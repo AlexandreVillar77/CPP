@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 15:47:47 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/13 14:07:43 by avillar          ###   ########.fr       */
+/*   Created: 2022/12/13 13:20:03 by avillar           #+#    #+#             */
+/*   Updated: 2022/12/13 14:51:26 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __DOG_HPP__
-# define __DOG_HPP__
+#ifndef __BRAIN_HPP__
+# define __BRAIN_HPP__
 
-# include "Animal.hpp"
+# include <iostream>
 
-class Dog : public Animal
+class Brain
 {
 private:
-	/* data */
-public:
-	Dog(/* args */);
-	Dog(Dog const & src);
+	std::string *ideas;
 
-	~Dog();
-	Dog&	operator=(Dog const & src);
-	void	makeSound() const;
+public:
+	Brain(/* args */);
+	Brain(Brain const & src);
+
+	~Brain();
+
+	Brain&	operator=(Brain const & src);
+	std::string	getIdea(int i) const;
+	std::string	*getIdeas() const;
+	void	setIdea(int i, std::string idea);
+	void	setIdeas(std::string *ideas);
+	void 	printIdeas() const;
+
 };
 
 #endif
