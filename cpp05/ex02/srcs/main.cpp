@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:21:43 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/05 16:08:34 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/06 09:56:30 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main()
 		ShrubberyCreationForm		f1("toLow");
 		b1.signForm(f1);
 		f1.beSigned(b1);
+		b1.executeForm(f1);
 		f1.execute(b1);
 	}
 	catch (std::exception & e) {
@@ -49,6 +50,7 @@ int	main()
 		ShrubberyCreationForm		f1("toLow");
 		b1.signForm(f1);
 		f1.beSigned(b1);
+		b1.executeForm(f1);
 		f1.execute(b1);
 	}
 	catch (std::exception & e) {
@@ -61,6 +63,7 @@ int	main()
 		PresidentialPardonForm		f1("equal");
 		b1.signForm(f1);
 		f1.beSigned(b1);
+		b1.executeForm(f1);
 		f1.execute(b1);
 	}
 	catch (std::exception & e) {
@@ -74,6 +77,7 @@ int	main()
 		PresidentialPardonForm		f1("equal");
 		b1.signForm(f1);
 		f1.beSigned(b1);
+		b2.executeForm(f1);
 		f1.execute(b2);
 	}
 	catch (std::exception & e) {

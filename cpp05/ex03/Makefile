@@ -6,11 +6,11 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2023/01/05 16:09:55 by avillar          ###   ########.fr        #
+#    Updated: 2023/01/06 13:26:51 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = multiForm
+NAME = intern
 
 SRCS =	srcs/main.cpp					\
 		srcs/Bureaucrat.cpp				\
@@ -18,6 +18,7 @@ SRCS =	srcs/main.cpp					\
 		srcs/ShrubberyCreationForm.cpp	\
 		srcs/RobotomyRequestForm.cpp	\
 		srcs/PresidentialPardonForm.cpp	\
+		srcs/Intern.cpp					\
 
 OBJS = $(SRCS:.cpp=.o)
 
