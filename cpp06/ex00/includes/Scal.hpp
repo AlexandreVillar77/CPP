@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:47:17 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/10 13:49:46 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/12 15:59:07 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 # include <iostream>
 # include <stdexcept>
+# include <string>
+# include <iomanip>
+# include <cstdlib>
+# include <cerrno>
+# include <climits>
+# include <cfloat>
+# include <cmath>
 
 class Scal
 {
 private:
 	char*	_arg;
 	std::string	_strarg;
+	int		_dot;
 	std::string _Otype;
 
 public:
@@ -52,6 +60,12 @@ public:
 	void	ParseFloat();
 	void	ParseDouble();
 
+	void	Display();
+	void	DisplayInt();
+	void	DisplayChar();
+	void	DisplayFloat();
+	void	DisplayDouble();
+
 	class notAnIntException: public std::exception
 	{
 		virtual const char*	what() const throw();
@@ -77,12 +91,12 @@ public:
 		virtual const char*	what() const throw();
 	};
 
-	class impossibleConvException: std::exception
+	class impossibleConvException: public std::exception
 	{
 		virtual const char* what() const throw();
 	};
 
-	class WrongArgumentException: std::exception
+	class wrongArgumentException: public std::exception
 	{
 		virtual const char* what() const throw();
 	};

@@ -6,16 +6,11 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 12:47:01 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/10 10:05:29 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/12 15:58:04 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Scal.hpp"
-
-int	get_Otype(Scal conv)
-{
-
-}
 
 int	main(int argc, char **argv)
 {
@@ -24,8 +19,12 @@ int	main(int argc, char **argv)
 		std::cout << "Use case :\n./convert [arg]" << std::endl;
 		return (1);
 	}
-	Scal	conv(argv[1]);
-
-
+	try {
+		Scal	conv(argv[1]);
+		conv.CheckArg();
+	}
+	catch (std::exception & e){
+		std::cout << "error : " << e.what() << std::endl;
+	}
 	return (0);
 }
