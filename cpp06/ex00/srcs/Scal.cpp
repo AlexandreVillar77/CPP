@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:47:38 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/12 16:12:56 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/16 09:57:19 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,9 +153,10 @@ void	Scal::CheckChar()
 
 void	Scal::CheckDouble()
 {
+	double t = std::strtod(_strarg.c_str(), NULL);
 	if (_strarg.length() > 1)
 	{
-		if (_dot > 0)
+		if (_dot > 0 || (t > 2147483647 || t < -2147483648))
 		{
 			if (_strarg.find('f') == _strarg.length() - 1)
 				_Otype = "float";
@@ -191,7 +192,7 @@ void	Scal::DisplayDouble()
 	if (errno)
 		throw Scal::notADoubleException();
 	d = static_cast<double>(d);
-	long int	i = static_cast<long int>(d);
+	long long int	i = static_cast<long long int>(d);
 	if (i < 0 || i > 127)
 		std::cout << "char: impossible" << std::endl;
 	else if (i > 126 || i < 32)
@@ -289,5 +290,5 @@ const char* Scal::notPrintableException::what() const throw()
 
 const char* Scal::wrongArgumentException::what() const throw()
 {
-	return ("Wrong argument");
+	return ("Error : Wrong argument");
 }

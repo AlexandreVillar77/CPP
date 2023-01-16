@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 12:47:01 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/16 09:56:57 by avillar          ###   ########.fr       */
+/*   Created: 2023/01/16 11:59:03 by avillar           #+#    #+#             */
+/*   Updated: 2023/01/16 12:51:44 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Scal.hpp"
+#ifndef A_HPP
+# define A_HPP
 
-int	main(int argc, char **argv)
+# include "./Base.hpp"
+
+class A : public Base
 {
-	if (argc != 2)
-	{
-		std::cout << "Use case :\n./convert [arg]" << std::endl;
-		return (1);
-	}
-	try {
-		Scal	conv(argv[1]);
-		conv.CheckArg();
-	}
-	catch (std::exception & e){
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
-}
+private:
+	/* data */
+public:
+	A(/* args */);
+	~A();
+};
+
+#endif

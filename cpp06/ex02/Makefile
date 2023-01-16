@@ -6,13 +6,17 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2023/01/09 12:46:13 by avillar          ###   ########.fr        #
+#    Updated: 2023/01/16 12:52:14 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Scalaire
+NAME = Identify
 
 SRCS =	srcs/main.cpp			\
+		srcs/Base.cpp			\
+		srcs/A.cpp				\
+		srcs/B.cpp				\
+		srcs/C.cpp				\
 
 
 OBJS = $(SRCS:.cpp=.o)

@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 12:47:01 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/16 09:56:57 by avillar          ###   ########.fr       */
+/*   Created: 2023/01/16 11:58:29 by avillar           #+#    #+#             */
+/*   Updated: 2023/01/16 12:49:21 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Scal.hpp"
+#include "../includes/Base.hpp"
 
-int	main(int argc, char **argv)
+Base::~Base()
 {
-	if (argc != 2)
-	{
-		std::cout << "Use case :\n./convert [arg]" << std::endl;
-		return (1);
-	}
-	try {
-		Scal	conv(argv[1]);
-		conv.CheckArg();
-	}
-	catch (std::exception & e){
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
 }

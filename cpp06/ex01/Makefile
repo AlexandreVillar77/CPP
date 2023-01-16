@@ -6,11 +6,11 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2023/01/09 12:46:13 by avillar          ###   ########.fr        #
+#    Updated: 2023/01/16 10:58:16 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Scalaire
+NAME = Serialize
 
 SRCS =	srcs/main.cpp			\
 
