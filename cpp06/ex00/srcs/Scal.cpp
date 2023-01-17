@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 09:47:38 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/16 09:57:19 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/16 13:39:58 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,12 +203,12 @@ void	Scal::DisplayDouble()
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
-	float	f = std::strtof(_strarg.c_str(), NULL);
-	if (errno)
+	//float	f = std::strtof(_strarg.c_str(), NULL);
+	/*if (errno)
 		std::cout << "float: impossible" << std::endl;
-	else
-		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
-	(void) f;
+	else*/
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
+	//(void) f;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }
 
