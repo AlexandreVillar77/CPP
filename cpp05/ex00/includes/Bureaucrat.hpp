@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:22:13 by avillar           #+#    #+#             */
-/*   Updated: 2022/12/15 13:17:05 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/17 13:46:52 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	std::string const & getName() const;
 	int getGrade() const;
 	void setGrade(int grade);
+	
 	void incrementGrade();
 	void decrementGrade();
 

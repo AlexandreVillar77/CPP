@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 09:58:52 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/06 12:33:02 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/17 14:16:29 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,13 @@ Form * Intern::makeForm(std::string name, std::string target)
 			switch (i)
 			{
 				case 0:
+					std::cout << "Intern creates RobotomyRequestForm" << std::endl;
 					return new RobotomyRequestForm(target);
 				case 1:
+					std::cout << "Intern creates PresidentialPardonForm" << std::endl;
 					return new PresidentialPardonForm(target);
 				case 2:
+					std::cout << "Intern creates ShrubberyCreationForm" << std::endl;
 					return new ShrubberyCreationForm(target);
 				break;
 			}

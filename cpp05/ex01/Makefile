@@ -6,7 +6,7 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 13:16:24 by avillar           #+#    #+#              #
-#    Updated: 2023/01/05 11:09:53 by avillar          ###   ########.fr        #
+#    Updated: 2023/01/09 12:50:04 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "\033[0;32m [OK] \033[0m		\033[0;35m Compiling:\033[0m" $(SRCS)
-	@$(CXX) $(OBJS) -o	$(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o	$(NAME)
 	@echo "\033[0;32m [OK] \033[0m		\033[0;35m Creating:\033[0m" $(NAME)
 
 clean:

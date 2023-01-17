@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:21:43 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/06 12:29:09 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/09 11:04:50 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main()
 		f1->beSigned(b1);
 		b1.executeForm(*f1);
 		f1->execute(b1);
+		delete f1;
 	}
 	catch (std::exception & e) {
 		std::cout << "error : " << e.what() << std::endl;
@@ -44,6 +45,7 @@ int	main()
 		f1->beSigned(b1);
 		b1.executeForm(*f1);
 		f1->execute(b1);
+		delete f1;
 	}
 	catch (std::exception & e) {
 		std::cout << "error : " << e.what() << std::endl;
