@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 10:57:21 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/17 13:44:11 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:21:12 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,41 @@
 
 int	main()
 {
-	::Array<int> a(5);
+	::Array<int> *a = new ::Array<int>(5);
 
 	for (int i = 0; i < 5; i++)
-		a[i] = i;
+		(*a)[i] = i;
 	for (int i = 0; i < 5; i++)
-		std::cout << a[i] << std::endl;
+		std::cout << (*a)[i] << std::endl;
+
+	std::cout << std::endl << "----------------" << std::endl;
+	std::cout << std::endl << "test i > " << (*a).size() << std::endl;
+	try
+	{
+		std::cout << (*a)[6] << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "error : " << e.what() << std::endl;
+	}
+
+	std::cout << std::endl << "----------------" << std::endl;
+	std::cout << std::endl << "test copy modif" << std::endl;
+	::Array<int> *b = new ::Array<int>(*a);
+	std::cout << "tab b:" << std::endl;
+	for (int i = 0; i < 5; i++)
+		std::cout << (*b)[i] << std::endl;
+	std::cout << "modif tab b" << std::endl;
+	for (int i = 0; i < 5; i++)
+		(*b)[i] = i + 5;
+	std::cout << "tab a:" << std::endl;
+	for (int i = 0; i < 5; i++)
+		std::cout << (*a)[i] << std::endl;
+	std::cout << "tab b:" << std::endl;
+	for (int i = 0; i < 5; i++)
+		std::cout << (*b)[i] << std::endl;
+	delete a;
+	delete b;
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:22:06 by avillar           #+#    #+#             */
-/*   Updated: 2023/01/17 13:40:32 by avillar          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:28:25 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ template <typename T> Array<T>::Array(unsigned int i) : _array(new T[i]), _size(
 	std::cout << "Constructor called" << std::endl;
 }
 
-template <typename T> Array<T>::Array(Array const &src)
+template <typename T> Array<T>::Array(Array const &src) : _array(new T[src.size()]), _size(src.size())
 {
 	operator=(src);
 	std::cout << "Copy constructor called" << std::endl;
@@ -36,10 +36,14 @@ template <typename T> Array<T>::~Array()
 
 template <typename T> Array<T> & Array<T>::operator=(Array<T> const &src)
 {
-	::Array<T>(src.size());
+	if (_size > 0 && _array != NULL)
+		delete [] _array;
+	_array = new T[src.size()];
+	_size = src.size();
 
 	for (unsigned int i = 0; i < _size; i++)
 		_array[i] = src[i];
+	return (*this);
 }
 
 template <typename T> unsigned int Array<T>::size() const
