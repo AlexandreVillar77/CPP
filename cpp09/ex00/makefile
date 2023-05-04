@@ -6,27 +6,30 @@
 #    By: avillar <avillar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 10:03:30 by avillar           #+#    #+#              #
-#    Updated: 2023/05/03 13:49:07 by avillar          ###   ########.fr        #
+#    Updated: 2023/05/04 15:26:26 by avillar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = btc
 
-SRCS = megaphone.cpp	\
 
-OBJS = megaphone.o		\
+SRCS =	srcs/main.cpp					\
+		srcs/BitcoinExchange.cpp		\
+		
 
-CC = g++
+OBJS = $(SRCS:.cpp=.o)
 
-CFLAGS = -Werror -Wall -Wextra -std=c++98
+CXX = c++
+
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "\033[0;32m [OK] \033[0m		\033[0;35m Compiling:\033[0m" $<
-	@$(CC) $(CFLAGS) $(SRCS)-o	$(NAME)
+	@echo "\033[0;32m [OK] \033[0m		\033[0;35m Compiling:\033[0m" $(SRCS)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o	$(NAME)
 	@echo "\033[0;32m [OK] \033[0m		\033[0;35m Creating:\033[0m" $(NAME)
 
 clean:
