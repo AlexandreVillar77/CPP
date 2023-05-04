@@ -6,20 +6,16 @@
 /*   By: avillar <avillar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:24:37 by avillar           #+#    #+#             */
-/*   Updated: 2023/05/04 14:36:05 by avillar          ###   ########.fr       */
+/*   Updated: 2023/05/04 14:57:42 by avillar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/RPN.hpp"
 
-void	skip(char* &s)
-{
-	while (*s == ' ')
-		s++;
-}
-
 void	read(char c, RPN &rpn)
 {
+	if (c == ' ')
+		return ;
 	if (c == '+')
 		rpn.add();
 	else if (c == '-')
@@ -43,12 +39,11 @@ int main(int ac, char **av)
 		std::cout << "Usage: ./rpn \"1 2 + 3 *\"" << std::endl;
 		return 1;
 	}
-	skip(av[1]);
 	s.assign(av[1]);
 	RPN rpn;
 	try
 	{
-		for (unsigned long i = 0; i < s.length(); i+=2)
+		for (unsigned long i = 0; i < s.length(); i++)
 			read(s[i], rpn);
 		int o = rpn.gettop();
 		std::cout << o << std::endl;
