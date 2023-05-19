@@ -22,6 +22,7 @@
 # include <sstream>
 # include <iterator>
 # include <cstdlib>
+# include <iomanip>
 
 class BitcoinExchange
 {
