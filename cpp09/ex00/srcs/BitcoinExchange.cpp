@@ -15,9 +15,11 @@
 BitcoinExchange::BitcoinExchange(/* args */)
 {
 	_file = NULL;
+	_max = 0;
+	_min = 0;
 }
 
-BitcoinExchange::BitcoinExchange(char * fichier) : _file(fichier)
+BitcoinExchange::BitcoinExchange(char * fichier) : _max(0), _min(0), _file(fichier)
 {
 }
 
@@ -126,7 +128,7 @@ void	BitcoinExchange::parsel2()
 	std::ifstream file(_file, std::ios::in);
 	if (!file)
 	{
-		std::cout << "Error: " << _file << " : file not found." << std::endl;
+		std::cout << "Error: " << _file << " : could not open file." << std::endl;
 		throw Error();
 	}
 	std::string ligne;
@@ -151,7 +153,7 @@ void	BitcoinExchange::parsel2()
 			for (int i = 0; i < 3; i++)
 			{
 				d = std::atof(ligne.c_str());
-				if (i == 0 && (d < 2009))
+				if (i == 0 && (d < _min))
 					stop = 1;
 				else if (i == 1 && (d < 1 || d > 12))
 					stop = 1;
@@ -202,6 +204,7 @@ void	BitcoinExchange::Parsel1()
 		const char *str;
 		std::string ligne;
 		long double res;
+		getline(fichier, ligne);
 		while(getline(fichier, ligne))
 		{
 			std::list<long double> l;
@@ -219,6 +222,10 @@ void	BitcoinExchange::Parsel1()
 			_list1.push_back(l);
 		}
 		fichier.close();
+		std::list< std::list < long double > >::iterator it = _list1.begin();
+		std::list< long double >::iterator it2 = (*it).begin();
+		if (*it2)
+			_min = *it2;
 	}
 	else
 	{

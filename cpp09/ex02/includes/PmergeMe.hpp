@@ -28,6 +28,7 @@ private:
 	std::clock_t		_start;
 	double				_vectorTime;
 	double				_dequeTime;
+	char**				_av;
 
 public:
 	PmergeMe(/* args */);
@@ -38,6 +39,10 @@ public:
 	void operator=(const PmergeMe &p);
 
 	int	check(char * s);
+
+	void	createV(char **av);
+	void	createD(char **av);
+
 	void	mergeSortV(std::vector<int> &v, int l, int r);
 	void	mergeSortD(std::deque<int> &d, int l, int r);
 
@@ -50,6 +55,7 @@ public:
 	void	sortV();
 
 	void	printTime();
+	void	printAV();
 
 	std::vector<int>	getV() const;
 	//std::deque<int>		getD() const;

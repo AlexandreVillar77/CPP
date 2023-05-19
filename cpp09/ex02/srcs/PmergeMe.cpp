@@ -46,9 +46,9 @@ int		PmergeMe::check(char * s)
 	return 0;
 }
 
-PmergeMe::PmergeMe(char **argv)
+PmergeMe::PmergeMe(char **argv) : _av(argv)
 {
-	int	i = 1;
+/*	int	i = 1;
 
 	while (argv[i])
 	{
@@ -64,7 +64,60 @@ PmergeMe::PmergeMe(char **argv)
 		}
 		i++;
 	}
+*/
 }
+
+void PmergeMe::createV(char **argv)
+{
+	int	i = 1;
+
+	while (argv[i])
+	{
+		if (check(argv[i]) == 1)
+		{
+			std::cout << "Error: " << argv[i] << " is not a good argument" << std::endl;
+			throw Error();
+		}
+		else
+			_v.push_back(atoi(argv[i]));
+		i++;
+	}
+}
+
+void PmergeMe::createD(char **argv)
+{
+	int	i = 1;
+
+	while (argv[i])
+	{
+		if (check(argv[i]) == 1)
+		{
+			std::cout << "Error: " << argv[i] << " is not a good argument" << std::endl;
+			throw Error();
+		}
+		else
+			_d.push_back(atoi(argv[i]));
+		i++;
+	}
+}
+
+/*
+
+	r = taille;
+	m = millieu;
+	l = debut;
+
+	L = tableau de gauche;
+	R = tableau de droite;
+
+	i et j = index de L et R;
+	k = index de v;
+
+	n1 et n2 = taille de L et R;
+
+
+	Separe le tableau en deux puis le fusionne en le triant # algo de merge-insert sort
+*/
 
 void PmergeMe::mergeD(std::deque<int> &v, int l, int m, int r) {
     int i, j, k;
@@ -105,12 +158,30 @@ void PmergeMe::mergeD(std::deque<int> &v, int l, int m, int r) {
     }
 }
 
+/*
+
+	r = taille;
+	m = millieu;
+	l = debut;
+
+	L = tableau de gauche;
+	R = tableau de droite;
+
+	i et j = index de L et R;
+	k = index de v;
+
+	n1 et n2 = taille de L et R;
+
+
+	Separe le tableau en deux puis le fusionne en le triant # algo de merge-insert sort
+*/
+
 void PmergeMe::mergeV(std::vector<int> &v, int l, int m, int r) {
     int i, j, k;
     int n1 = m - l + 1;
     int n2 =  r - m;
  
-    int L[n1], R[n2];
+	int L[n1], R[n2];
  
     for (i = 0; i < n1; i++)
         L[i] = v[l + i];
@@ -143,6 +214,14 @@ void PmergeMe::mergeV(std::vector<int> &v, int l, int m, int r) {
         k++;
     }
 }
+
+/*
+
+	r = taille;
+	m = millieu;
+	l = debut;
+
+*/
 
 void PmergeMe::mergeSortD(std::deque<int> &v, int l, int r) {
     if (l < r) {
@@ -177,11 +256,24 @@ void PmergeMe::printTime()
 void PmergeMe::sortV()
 {
 	_start = std::clock();
+	createV(_av);
 	mergeSortV(_v, 0, _v.size() - 1);
 	_vectorTime = (std::clock() - _start);
 	_start = std::clock();
+	createD(_av);
 	mergeSortD(_d, 0, _d.size() - 1);
 	_dequeTime = (std::clock() - _start);
+}
+
+void	PmergeMe::printAV()
+{
+	int i = 1;
+	while (_av[i])
+	{
+		std::cout << _av[i] << " ";
+		i++;
+	}
+	std::cout << std::endl;
 }
 
 std::vector<int> PmergeMe::getV() const

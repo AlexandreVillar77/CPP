@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	PmergeMe p(argv);
 
 	std::cout << "Before sort : ";
-	p.printV();
+	p.printAV();
 	p.sortV();
 	std::cout << "After sort : ";
 	p.printV();
